@@ -4,6 +4,7 @@
     "date": "2026-04-25",
     "summary": "How I achieved zero blocking time and perfect Lighthouse scores using vanilla HTML and CSS.",
     "slug": "how-i-built-this",
-    "readTime": 8
+    "readTime": 8,
+    "tags": ["Performance", "Security", "SEO"]
   }
 ]
