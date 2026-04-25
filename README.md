@@ -17,6 +17,13 @@ https://oceanbennett.netlify.app/
 - `netlify.toml` — publish config
 - `LICENSE` — custom AGPL-3.0 license
 
+## System Architecture
+
+- **Zero-Dependency Core**: Built with vanilla HTML5/CSS3 to ensure 100/100 Lighthouse performance scores and zero maintenance overhead.
+- **AI-Agent Optimized**: Includes `llms.txt` and `llms-full.txt` (per the `/llms-txt` standard) to provide high-density context for LLM-based crawlers and coding agents.
+- **Atomic Deployment**: Configured for immutable, headless deploys via Netlify, using `netlify.toml` and `_headers` to enforce security and caching logic at the edge.
+- **Responsive Interaction**: Implements a GPU-accelerated starfield canvas and 3D transform hero animations with a focus on buttery-smooth 60fps interaction.
+
 ## Deploy with GitHub + Netlify
 
 1. Create a private GitHub repo.
