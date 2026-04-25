@@ -1,0 +1,50 @@
+AGPL-3.0 License with Visible Attribution Requirement
+
+Copyright (c) 2026 Ocean Bennett
+
+OCEAN BENNETT PORTFOLIO — including its custom 3D hero animation system, 
+interactive starfield engine, responsive design architecture, and all source 
+code in this repository — is licensed under the GNU Affero General Public 
+License v3.0, with the additional visible attribution requirement below.
+
+────────────────────────────────────────────────────────────────────────────────
+ADDITIONAL TERM (permitted under AGPL-3.0 Section 7):
+────────────────────────────────────────────────────────────────────────────────
+
+Any website, application, or service that uses, derives from, or is
+substantially built upon this portfolio's design or its architecture must 
+include a visible credit in one or more of the following locations:
+
+  - The product's footer or about page
+  - The product's public-facing README or documentation
+  - The product's landing page or website
+
+The credit must read, at minimum:
+
+  "Portfolio design and architecture based on work by Ocean Bennett
+   (https://github.com/undergroundrap/oceanbennett)"
+
+  or an equivalent that names Ocean Bennett and links to this repository.
+
+This requirement applies regardless of how substantially the code was modified.
+────────────────────────────────────────────────────────────────────────────────
+
+Core license terms:
+
+1. Attribution: Retain this copyright notice and the visible credit above in
+   any derivative work, fork, or project that uses this site's design or its
+   architecture.
+
+2. Copyleft: Derivative works must be released under AGPL-3.0. You may not
+   incorporate this code into a closed-source project.
+
+3. Network use: If you run a modified version as a hosted or networked service,
+   you must make the complete modified source code publicly available. This
+   applies even if you never distribute a binary — hosting a website counts.
+
+4. Commercial use by the original author: Ocean Bennett, as copyright holder,
+   reserves the right to release commercial versions of this software under
+   separate licensing terms. This does not affect the open-source rights
+   granted to the community under this license.
+
+Full AGPL-3.0 license text: https://www.gnu.org/licenses/agpl-3.0.en.html
