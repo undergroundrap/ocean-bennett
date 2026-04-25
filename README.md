@@ -44,6 +44,17 @@ https://oceanbennett.com/
 3. **Add Assets**: Put your images in `blog/[slug]/img/` and use **WebP** for maximum performance.
 4. **Register**: Add your post's metadata to `blog/posts.json`. The homepage will automatically detect and list it.
 
+## Editorial Standards
+
+To maintain the **100/100 Lighthouse score** and professional engineering tone:
+
+- **Performance**: Always use `.webp` for images. Aim for < 100KB per asset.
+- **Accessibility**: Every `<img>` tag must have a descriptive `alt` attribute.
+- **UX (Tooltips)**: Use `<span data-tooltip="...">` for technical acronyms (e.g., HSTS, TBT) to keep the content accessible to non-technical recruiters.
+- **Code Hygiene**: Use `<pre><code>` blocks for snippets. The micro-syntax highlighter will handle the rest.
+- **Credibility**: Always include a `Sources & References` section at the bottom linking to the relevant GitHub repo or documentation.
+
+
 
 ## Social preview cache refresh
 
