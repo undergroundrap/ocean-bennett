@@ -3,6 +3,8 @@
 
 .tldr{margin:64px 0;padding:32px;background:#0a0a0a;border:1px solid var(--line-2);border-radius:18px}.tldr h3{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg);margin-bottom:16px;display:flex;align-items:center;gap:8px}.tldr h3::before{content:"";width:8px;height:8px;background:#61afef;border-radius:50%}
 
+.scroll-top{position:fixed;bottom:32px;right:32px;width:48px;height:48px;background:rgba(15,15,15,.8);backdrop-filter:blur(12px);border:1px solid var(--line-2);border-radius:50%;color:var(--fg);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all 250ms ease;z-index:1000;box-shadow:0 8px 32px rgba(0,0,0,.4)}.scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.scroll-top:hover{border-color:var(--fg);background:rgba(25,25,25,.9);transform:translateY(-2px)}
+
 hr{border:0;border-top:1px solid var(--line-2);margin:64px 0}footer{font-size:14px;color:var(--dim)}
 </style></head><body><main><a href="/" class="back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Home</a><header><h1>[[TITLE]]</h1><div class="meta"><span>[[DATE]]</span><span>&middot;</span><span>[[READ_TIME]] min read</span><span>&middot;</span><span>[[WORD_COUNT]] words</span></div></header>
 
@@ -20,6 +22,7 @@ hr{border:0;border-top:1px solid var(--line-2);margin:64px 0}footer{font-size:14
 <li><a href="https://github.com/undergroundrap/ocean-bennett" target="_blank" rel="noopener">Source Code</a></li>
 </ul>
 </section>
-</article><footer><hr/><p>&copy; 2026 Ocean Bennett</p></footer></main><script>
+</article><footer><hr/><p>&copy; 2026 Ocean Bennett</p></footer></main><button class="scroll-top" id="scroll-top" aria-label="Scroll to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button><script>
  (()=>{const h=c=>c.replace(/(\/\/.*)/g,'<span class="c">$1</span>').replace(/("(?:[^"\\]|\\.)*")/g,'<span class="s">$1</span>').replace(/\b(const|let|var|function|return|if|else|for|while|await|async|try|catch|export|import|from|window|navigator|addEventListener|requestIdleCallback|setTimeout)\b/g,'<span class="k">$1</span>').replace(/\b(\d+)\b/g,'<span class="n">$1</span>').replace(/\b([a-zA-Z_]\w*)(?=\()/g,'<span class="f">$1</span>');document.querySelectorAll("pre code").forEach(b=>b.innerHTML=h(b.textContent))})();
+ (()=>{const b=document.getElementById("scroll-top");if(!b)return;window.addEventListener("scroll",()=>{if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});b.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})})();
 </script></body></html>
