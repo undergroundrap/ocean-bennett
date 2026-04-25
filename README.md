@@ -54,4 +54,6 @@ Copy the contents of `blog/template.html` into `blog/[slug]/index.html`.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **AGPL-3.0 License with a Mandatory Visible Attribution Requirement**. 
+
+Any website, application, or service that uses, derives from, or is substantially built upon this portfolio's design or its architecture must include a visible credit to **Ocean Bennett**. See the [LICENSE](LICENSE) file for the full legal terms and credit requirements.
