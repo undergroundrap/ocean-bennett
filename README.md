@@ -15,6 +15,7 @@ https://oceanbennett.netlify.app/
 - `llms.txt`, `llms-full.txt` — AI-readable profile summary
 - `_headers` — Netlify response headers
 - `netlify.toml` — publish config
+- `LICENSE` — custom AGPL-3.0 license
 
 ## Deploy with GitHub + Netlify
 
