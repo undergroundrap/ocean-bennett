@@ -187,8 +187,6 @@
     H = window.innerHeight;
     canvas.width = W * DPR;
     canvas.height = H * DPR;
-    canvas.style.width = W + "px";
-    canvas.style.height = H + "px";
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 
     const density = Math.min(180, Math.floor((W * H) / 12000));
