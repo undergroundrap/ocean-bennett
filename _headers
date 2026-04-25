@@ -6,11 +6,16 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://*.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.gstatic.com; manifest-src 'self';
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
-/favicon.ico
-  Cache-Control: public, max-age=604800
 
+# Caching Rules
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
 
 /favicon.svg
   Cache-Control: public, max-age=604800
@@ -34,12 +39,6 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
-/index.html
-  Cache-Control: public, max-age=0, must-revalidate
-
 /browserconfig.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=604800
-
-/404.html
-  Cache-Control: public, max-age=0, must-revalidate

@@ -1,8 +1,12 @@
-const CACHE_NAME = 'ocean-bennett-v1';
+const CACHE_NAME = 'ocean-bennett-v2';
 const ASSETS = [
   '/',
   '/index.html',
   '/404.html',
+  '/css/main.css',
+  '/css/404.css',
+  '/js/main.js',
+  '/js/sw-reg.js',
   '/favicon.ico',
   '/favicon.svg',
   '/favicon-32x32.png',
