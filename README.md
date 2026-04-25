@@ -1,5 +1,7 @@
 # Ocean Bennett Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/oceanbennett/deploy-status)](https://app.netlify.com/sites/oceanbennett/deploys)
+
 Static portfolio configured for Netlify at:
 
 https://oceanbennett.netlify.app/

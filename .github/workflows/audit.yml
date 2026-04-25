@@ -1,0 +1,22 @@
+name: Audit
+ 
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+ 
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lighthouse Check
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            http://localhost:8080/index.html
+            http://localhost:8080/404.html
+          staticDistDir: .
+          uploadArtifacts: true # save results as an action artifact
+          temporaryPublicStorage: true # upload lighthouse report to a temporary public storage
