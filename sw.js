@@ -13,7 +13,9 @@ const ASSETS = [
   '/robots.txt',
   '/llms.txt',
   '/llms-full.txt',
-  '/sitemap.xml'
+  '/sitemap.xml',
+  '/blog/posts.json',
+  '/blog/template.html'
 ];
 
 // Install: Cache all static assets
