@@ -6,6 +6,9 @@
 <title>404 — Ocean Bennett</title>
 <meta name="description" content="Page not found. Return to Ocean Bennett's portfolio — AI Automation Engineer." />
 <meta name="robots" content="noindex" />
+<meta name="theme-color" content="#000000" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <style>
 :root{--bg:#000;--fg:#fff;--dim:#8c8c8c;--line:#202020}
 *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,sans-serif;height:100%}
@@ -23,5 +26,12 @@ a:hover{transform:translateY(-1px)}
   <p>That page does not exist. Go back to Ocean Bennett’s portfolio.</p>
   <a href="/">Return home</a>
 </main>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW error:', err));
+    });
+  }
+</script>
 </body>
 </html>
