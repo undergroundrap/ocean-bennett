@@ -8,7 +8,21 @@
 <meta name="theme-color" content="#000000" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="stylesheet" href="/css/404.css" />
+<style>
+/**
+ * 404 Page Styles - Ocean Bennett
+ * Inlined for maximum performance (Lighthouse 100).
+ */
+:root { --bg: #000; --fg: #fff; --dim: #8c8c8c; --line: #202020; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif; height: 100%; }
+body { display: grid; place-items: center; padding: 24px; }
+main { max-width: 720px; width: 100%; border: 1px solid var(--line); border-radius: 24px; padding: 32px; background: #090909; }
+h1 { font-size: clamp(42px, 8vw, 84px); line-height: .95; letter-spacing: -.02em; margin: 0 0 16px; }
+p { color: #d4d4d4; line-height: 1.6; margin: 0 0 22px; }
+a { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #000; text-decoration: none; border-radius: 999px; padding: 14px 18px; font-weight: 600; border: 1px solid #fff; }
+a:hover { transform: translateY(-1px); }
+</style>
 </head>
 <body>
 <main>
@@ -16,6 +30,12 @@
   <p>That page does not exist. Go back to Ocean Bennett’s portfolio.</p>
   <a href="/">Return home</a>
 </main>
-<script src="/js/sw-reg.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW error:', err));
+  });
+}
+</script>
 </body>
 </html>

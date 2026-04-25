@@ -9,7 +9,11 @@ const ASSETS = [
   '/favicon-192x192.png',
   '/apple-touch-icon.png',
   '/og-image.png',
-  '/site.webmanifest'
+  '/site.webmanifest',
+  '/robots.txt',
+  '/llms.txt',
+  '/llms-full.txt',
+  '/sitemap.xml'
 ];
 
 // Install: Cache all static assets
