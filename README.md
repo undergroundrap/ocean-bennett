@@ -26,10 +26,10 @@ https://oceanbennett.com/
 
 ## System Architecture
 
-- **Engineered for Speed**: Built with vanilla HTML5/CSS3 to maintain a near-perfect "Full House" (98+) Lighthouse score on mobile audits. No frameworks, no bloat.
-- **AI-Agent Optimized**: Includes `llms.txt` and `llms-full.txt` (per the `/llms-txt` standard) to provide high-density context for LLM-based crawlers and coding agents.
-- **Atomic Deployment**: Configured for immutable, headless deploys via Netlify, using `netlify.toml` and `_headers` to enforce security and caching logic at the edge.
-- **Responsive Interaction**: Implements a GPU-accelerated starfield canvas and 3D transform hero animations with a focus on buttery-smooth 60fps interaction.
+- **Engineered for Speed**: Built with vanilla HTML5/CSS3 to maintain a near-perfect "Full House" (98+) Lighthouse score on mobile audits. No frameworks, zero-JS UI logic.
+- **Enterprise Security**: Hardened with strict Content Security Policy (CSP) and submitted for global **HSTS Preloading** to ensure browser-level HTTPS enforcement.
+- **Semantic SEO & Schema**: Implemented **JSON-LD Person Schema** and high-density `llms.txt` context to maximize discovery for both search engines and AI agents.
+- **Micro-Interactions**: Features a GPU-accelerated starfield, 3D transform hero animations, and pure-CSS tooltips designed for high-end "discovered" depth.
 
 ## Social preview cache refresh
 
