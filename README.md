@@ -37,6 +37,14 @@ https://oceanbennett.com/
 - **Asset Optimization**: Standardized on **WebP** for all visual assets with a slug-based folder structure (`blog/img/[slug]/`) to maintain organization at scale.
 - **IDE-Style Highlighting**: Custom regex-based micro-syntax highlighter for technical deep-dives, ensuring high readability without the weight of external libraries.
 
+## Writing a New Article
+
+1. **Create a Folder**: `blog/[slug]/` (e.g., `blog/my-new-post/`)
+2. **Copy Template**: Copy `blog/template.html` into that folder and rename it to `index.html`.
+3. **Add Assets**: Put your images in `blog/[slug]/img/` and use **WebP** for maximum performance.
+4. **Register**: Add your post's metadata to `blog/posts.json`. The homepage will automatically detect and list it.
+
+
 ## Social preview cache refresh
 
 After first deploy or after updating `og-image.png`, some platforms may cache the old preview. You can force a refresh with:
