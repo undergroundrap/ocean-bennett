@@ -480,6 +480,7 @@ footer a:hover { color: var(--fg); }
 .fade.d4 { animation-delay: 190ms; }
 .fade.d5 { animation-delay: 240ms; }
 @keyframes fade { to { opacity: 1; transform: translateY(0); } }
+.noscript-msg { color: #a3a3a3; font-size: 14px; margin-bottom: 20px; display: block; }
 
 @keyframes pulse {
   0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
