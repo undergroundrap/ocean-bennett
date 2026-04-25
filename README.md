@@ -18,6 +18,7 @@ https://oceanbennett.com/
 - `_headers` — Netlify response headers
 - `netlify.toml` — publish config
 - `LICENSE` — custom AGPL-3.0 license
+- `sw.js` — Service Worker for offline support
 
 ## System Architecture
 
