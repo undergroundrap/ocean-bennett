@@ -4,7 +4,7 @@
 
 ## Canonical profile
 
-- Website: https://oceanbennett.netlify.app/
+- Website: https://oceanbennett.com/
 - GitHub: https://github.com/undergroundrap
 - LinkedIn: https://www.linkedin.com/in/oceanbennett/
 - X: https://x.com/oceanbennett
