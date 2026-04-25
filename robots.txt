@@ -1,0 +1,6 @@
+# Public portfolio. Allow search engines and AI crawlers to discover and reference this site.
+User-agent: *
+Allow: /
+
+Sitemap: https://oceanbennett.netlify.app/sitemap.xml
+Host: oceanbennett.netlify.app
