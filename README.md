@@ -31,6 +31,12 @@ https://oceanbennett.com/
 - **Semantic SEO & Schema**: Implemented **JSON-LD Person Schema** and high-density `llms.txt` context to maximize discovery for both search engines and AI agents.
 - **Micro-Interactions**: Features a GPU-accelerated starfield, 3D transform hero animations, and pure-CSS tooltips designed for high-end "discovered" depth.
 
+## Content Architecture
+
+- **Searchable Writing Hub**: Integrated technical blog engine using a lightweight JSON-based index for real-time filtering and zero-latency discovery.
+- **Asset Optimization**: Standardized on **WebP** for all visual assets with a slug-based folder structure (`blog/img/[slug]/`) to maintain organization at scale.
+- **IDE-Style Highlighting**: Custom regex-based micro-syntax highlighter for technical deep-dives, ensuring high readability without the weight of external libraries.
+
 ## Social preview cache refresh
 
 After first deploy or after updating `og-image.png`, some platforms may cache the old preview. You can force a refresh with:
