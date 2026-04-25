@@ -17,5 +17,5 @@ jobs:
           urls: |
             https://oceanbennett.com/
             https://oceanbennett.com/404.html
-          uploadArtifacts: true
+          uploadArtifacts: false
           temporaryPublicStorage: true
