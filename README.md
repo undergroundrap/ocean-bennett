@@ -4,7 +4,7 @@
 ![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen)
 ![Lighthouse Best Practices](https://img.shields.io/badge/Best_Practices-100%2F100-brightgreen)
 ![Lighthouse SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/oceanbennett/deploy-status)](https://app.netlify.com/sites/oceanbennett/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4c522319-a79a-46d9-baee-f27b340b9482/deploy-status)](https://app.netlify.com/sites/oceanbennett/deploys)
 
 Static portfolio configured for Netlify at:
 
