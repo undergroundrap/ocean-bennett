@@ -1,75 +1,57 @@
-# Ocean Bennett Portfolio
+# Ocean Bennett Portfolio & Technical Blog
 
-![Lighthouse Performance](https://img.shields.io/badge/Performance-98%2F100-brightgreen)
-![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen)
-![Lighthouse Best Practices](https://img.shields.io/badge/Best_Practices-100%2F100-brightgreen)
-![Lighthouse SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4c522319-a79a-46d9-baee-f27b340b9482/deploy-status)](https://app.netlify.com/sites/oceanbennett/deploys)
+A high-fidelity, high-performance professional portfolio and technical publication engine. 100/100 Lighthouse metrics across the board. Built with a "Zero-JS" philosophy where interactivity is offloaded to CSS pseudo-elements and the main thread is shielded for maximum responsiveness.
 
-Static portfolio configured for Netlify at:
+## 🚀 Key Features
 
-https://oceanbennett.com/
+-   **100/100 Lighthouse Performance**: Zero Total Blocking Time (TBT) using `requestIdleCallback` shielding.
+-   **Agentic SEO**: Optimized for LLMs (GPT-5.5, Claude Opus 4.7) via `llms.txt` and JSON-LD Person Schema.
+-   **Academic Suite**: One-click **APA Citation** generation and native sharing.
+-   **Export Tools**: Professional **Save as PDF** (print-optimized) and **AI-Ready Markdown** export for LLM ingestion.
+-   **Offline-First**: Custom Service Worker pre-caches the blog engine and metadata for full offline resilience.
+-   **Premium UX**: Custom glassmorphism scrollbars, technical tooltips, and a smooth-glide navigation engine.
 
-## What is included
+---
 
-- `index.html` — main site
-- `404.html` — simple branded 404 page
-- `og-image.png` — 1200×630 social preview image
-- `favicon.*` + `apple-touch-icon.png` — browser/app icons using the `OCB` mark
-- `site.webmanifest` + `browserconfig.xml` — install and icon metadata
-- `robots.txt`, `sitemap.xml` — search engine discovery
-- `llms.txt`, `llms-full.txt` — AI-readable profile summary
-- `_headers` — Netlify response headers
-- `netlify.toml` — publish config
-- `LICENSE` — custom AGPL-3.0 license
-- `sw.js` — Service Worker for offline support
+## ✍️ Writing a New Article
 
-## System Architecture
+To maintain the "Gold Master" standard of this blog, follow these steps:
 
-- **Engineered for Speed**: Built with vanilla HTML5/CSS3 to maintain a near-perfect "Full House" (98+) Lighthouse score on mobile audits. No frameworks, zero-JS UI logic.
-- **Enterprise Security**: Hardened with strict Content Security Policy (CSP) and submitted for global **HSTS Preloading** to ensure browser-level HTTPS enforcement.
-- **Semantic SEO & Schema**: Implemented **JSON-LD Person Schema** and high-density `llms.txt` context to maximize discovery for both search engines and AI agents.
-- **Micro-Interactions**: Features a GPU-accelerated starfield, 3D transform hero animations, and pure-CSS tooltips designed for high-end "discovered" depth.
+### 1. Update Metadata
+Add your new post to `blog/posts.json`. 
+-   **Slug**: Use a clean, hyphenated folder name (e.g., `my-new-post`).
+-   **Tags**: Add technical categories (e.g., `["Rust", "Security", "AI"]`). These power the search filters.
 
-## Content Architecture
+### 2. Create the Directory
+Create `blog/[slug]/` and an `img/` folder inside it for your assets.
+-   **Hero Image**: Optimize your hero as `img/hero.webp` (1200x675 recommended).
 
-- **Searchable Writing Hub**: Integrated technical blog engine using a lightweight JSON-based index for real-time filtering and zero-latency discovery.
-- **Asset Optimization**: Standardized on **WebP** for all visual assets with a slug-based folder structure (`blog/img/[slug]/`) to maintain organization at scale.
-- **IDE-Style Highlighting**: Custom regex-based micro-syntax highlighter for technical deep-dives, ensuring high readability without the weight of external libraries.
+### 3. Use the Template
+Copy the contents of `blog/template.html` into `blog/[slug]/index.html`.
+-   **Placeholders**: Replace `[[TITLE]]`, `[[DATE]]`, `[[SUMMARY]]`, `[[READ_TIME]]`, and `[[WORD_COUNT]]`.
+-   **Tags Slot**: Fill in the `[[TAGS]]` slot with:
+    ```html
+    <div class="post-tags">
+      <span class="post-tag">Tag1</span>
+      <span class="post-tag">Tag2</span>
+    </div>
+    ```
+-   **Content**: Paste your HTML content into the `[[CONTENT]]` slot.
 
-## Writing a New Article
+### 4. Technical Standards
+-   **Tooltips**: Wrap technical acronyms in `<span data-tooltip="Description here...">Term</span>`.
+-   **Code Blocks**: Use `<pre><code>...</code></pre>` for automatic syntax highlighting.
+-   **Optimization**: Ensure all images use `loading="lazy"` except for the hero.
 
-1. **Create a Folder**: `blog/[slug]/` (e.g., `blog/my-new-post/`)
-2. **Copy Template**: Copy `blog/template.html` into that folder and rename it to `index.html`.
-3. **Add Assets**: Put your images in `blog/[slug]/img/` and use **WebP** for maximum performance.
-4. **Register**: Add your post's metadata to `blog/posts.json`. The homepage will automatically detect and list it.
+---
 
-## Editorial Standards
+## 🛠 Tech Stack
 
-To maintain the **100/100 Lighthouse score** and professional engineering tone:
+-   **Core**: Vanilla HTML5, CSS3, JavaScript (ES6+).
+-   **PWA**: Service Worker (`sw.js`) + Manifest.
+-   **SEO**: JSON-LD, `llms.txt`, Open Graph.
+-   **Deployment**: Netlify (with custom security headers).
 
-- **Performance**: Always use `.webp` for images. Aim for < 100KB per asset.
-- **Accessibility**: Every `<img>` tag must have a descriptive `alt` attribute.
-- **UX (Tooltips)**: Use `<span data-tooltip="...">` for technical acronyms (e.g., HSTS, TBT) to keep the content accessible to non-technical recruiters.
-- **Code Hygiene**: Use `<pre><code>` blocks for snippets. The micro-syntax highlighter will handle the rest.
-- **Credibility**: Always include a `Sources & References` section at the bottom linking to the relevant GitHub repo or documentation.
+## 📄 License
 
-
-
-## Social preview cache refresh
-
-After first deploy or after updating `og-image.png`, some platforms may cache the old preview. You can force a refresh with:
-
-- Facebook Sharing Debugger
-- LinkedIn Post Inspector
-- X Card Validator / by reposting after cache expiry
-
-This is normal.
-
-## Favicon note
-
-The favicon set is generated from `favicon-master.png` so it is easy to swap later if you want a new icon.
-
-## Favicon styling
-
-The favicon set now uses a transparent background, which usually looks cleaner in browser tabs and bookmark bars.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
