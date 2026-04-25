@@ -5,9 +5,11 @@
 [data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:0;padding:8px 12px;background:rgba(15,15,15,0.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:12px;border-radius:8px;white-space:nowrap;opacity:0;visibility:hidden;transition:all 0.2s cubic-bezier(0.23,1,0.32,1);transform:translateY(5px);z-index:100;box-shadow:0 10px 30px rgba(0,0,0,0.5);pointer-events:none}
 [data-tooltip]:hover::after{opacity:1;visibility:visible;transform:translateY(0)}
 
+.refs{margin-top:64px;padding-top:32px;border-top:1px solid var(--line-2);font-size:16px}.refs h3{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:16px}.refs ul{list-style:none;padding:0;margin:0}.refs li{margin-bottom:8px}.refs a{color:#61afef;text-decoration:none;transition:opacity 0.2s}.refs a:hover{opacity:0.8;text-decoration:underline}
+
 hr{border:0;border-top:1px solid var(--line-2);margin:64px 0}footer{font-size:14px;color:var(--dim)}
 </style></head><body><main><a href="/" class="back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Home</a><header><h1>[[TITLE]]</h1><div class="meta"><span>[[DATE]]</span><span>&middot;</span><span>[[READ_TIME]] min read</span></div></header>[[HERO_IMAGE]]<article>
 [[CONTENT]]
-</article><footer><hr/><p>&copy; 2026 Ocean Bennett</p></footer></main><script>
+[[REFERENCES]]</article><footer><hr/><p>&copy; 2026 Ocean Bennett</p></footer></main><script>
  (()=>{const h=c=>c.replace(/(\/\/.*)/g,'<span class="c">$1</span>').replace(/("(?:[^"\\]|\\.)*")/g,'<span class="s">$1</span>').replace(/\b(const|let|var|function|return|if|else|for|while|await|async|try|catch|export|import|from|window|navigator|addEventListener|requestIdleCallback|setTimeout)\b/g,'<span class="k">$1</span>').replace(/\b(\d+)\b/g,'<span class="n">$1</span>').replace(/\b([a-zA-Z_]\w*)(?=\()/g,'<span class="f">$1</span>');document.querySelectorAll("pre code").forEach(b=>b.innerHTML=h(b.textContent))})();
 </script></body></html>
