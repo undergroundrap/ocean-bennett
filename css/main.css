@@ -472,13 +472,13 @@ footer a:hover { color: var(--fg); }
   .now-meta { gap: 16px 24px; }
 }
 
-/* subtle entry */
-.fade { opacity: 0; transform: translateY(8px); animation: fade 700ms ease forwards; }
-.fade.d1 { animation-delay: 60ms; }
-.fade.d2 { animation-delay: 140ms; }
-.fade.d3 { animation-delay: 220ms; }
-.fade.d4 { animation-delay: 300ms; }
-.fade.d5 { animation-delay: 380ms; }
+/* subtle entry - accelerated for LCP 100 */
+.fade { opacity: 0; transform: translateY(8px); animation: fade 400ms ease forwards; }
+.fade.d1 { animation-delay: 40ms; }
+.fade.d2 { animation-delay: 90ms; }
+.fade.d3 { animation-delay: 140ms; }
+.fade.d4 { animation-delay: 190ms; }
+.fade.d5 { animation-delay: 240ms; }
 @keyframes fade { to { opacity: 1; transform: translateY(0); } }
 
 @keyframes pulse {
