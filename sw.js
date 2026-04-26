@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ocean-bennett-v3';
+const CACHE_NAME = 'ocean-bennett-v4';
 const ASSETS = [
   '/',
   '/index.html',
@@ -9,6 +9,7 @@ const ASSETS = [
   '/js/sw-reg.js',
   '/favicon.ico',
   '/favicon.svg',
+  '/favicon-48x48.png',
   '/favicon-32x32.png',
   '/favicon-192x192.png',
   '/apple-touch-icon.png',
