@@ -17,6 +17,9 @@
 /ouxa/privacy/
   Cache-Control: public, max-age=0, must-revalidate
 
+/ouxa/pricing/
+  Cache-Control: public, max-age=0, must-revalidate
+
 /ouxa/support/
   Cache-Control: public, max-age=0, must-revalidate
 

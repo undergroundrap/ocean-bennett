@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ouxa Pricing | Ocean Bennett</title>
+    <meta name="description" content="Pricing for Ouxa, a local-first programming learning app by Ocean Bennett. Free foundations, optional one-time unlocks, and no subscriptions." />
+    <link rel="canonical" href="https://oceanbennett.com/ouxa/pricing/" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #030303;
+        --card: #0b0b0b;
+        --text: #f8f8f8;
+        --muted: #cfcfcf;
+        --dim: #999999;
+        --border: #262626;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 56px 20px 80px;
+      }
+      h1, h2, h3 { line-height: 1.15; }
+      h1 { font-size: 42px; margin: 0 0 8px; letter-spacing: -0.04em; }
+      h2 { margin-top: 36px; }
+      h3 { margin: 0 0 6px; }
+      p, li { color: var(--muted); }
+      a { color: #fff; }
+      .meta { color: var(--dim); font-weight: 700; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 20px;
+      }
+      .price {
+        color: var(--text);
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin: 12px 0;
+      }
+      .badge {
+        display: inline-block;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--dim);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        padding: 5px 10px;
+        text-transform: uppercase;
+      }
+      .button {
+        display: inline-block;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 10px 16px;
+        margin-top: 8px;
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .note {
+        color: var(--dim);
+        font-size: 14px;
+        margin-top: 28px;
+      }
+      ul { padding-left: 20px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="meta">Ouxa</p>
+      <h1>Pricing</h1>
+      <p>Ouxa is free to start. Paid access is handled as optional one-time in-app purchases through Apple App Store and Google Play. There are no subscriptions in the MVP.</p>
+
+      <section class="grid" aria-label="Pricing options">
+        <article class="panel">
+          <span class="badge">Free</span>
+          <h2>Foundations</h2>
+          <p class="price">$0</p>
+          <p>Difficulty 1-4 lessons, daily practice, XP, streaks, hearts, deterministic offline tutor hints, and optional local model use where supported.</p>
+        </article>
+
+        <article class="panel">
+          <span class="badge">Best start</span>
+          <h2>Ouxa Pro Unlimited</h2>
+          <p class="price">$49.99</p>
+          <p>One-time unlock for infinite hearts, no waiting, and a smoother long-term learning flow.</p>
+        </article>
+
+        <article class="panel">
+          <span class="badge">Founder</span>
+          <h2>Lifetime All Access</h2>
+          <p class="price">$299.99</p>
+          <p>One-time founder unlock for all current tracks, this app's curriculum updates, projects, and infinite hearts.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Mastery Packs</h2>
+        <div class="grid">
+          <article class="panel">
+            <h3>Track Mastery</h3>
+            <p class="price">$49.99 each</p>
+            <p>Unlocks advanced difficulty 5-6 lessons and mastery depth for a specific track.</p>
+            <ul>
+              <li>Rust Pro Mastery</li>
+              <li>Python Pro Mastery</li>
+              <li>TypeScript Pro Mastery</li>
+              <li>Node Production Mastery</li>
+              <li>AI Architect Mastery</li>
+              <li>Systems Architecture Mastery</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Credit Packs</h3>
+            <p>Optional credit top-ups for shop perks and streak tools.</p>
+            <ul>
+              <li>500 credits: $4.99</li>
+              <li>1,200 credits: $9.99</li>
+              <li>6,500 credits: $49.99</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Purchase Notes</h2>
+        <ul>
+          <li>Purchases are made inside the Ouxa app through Apple App Store or Google Play.</li>
+          <li>Prices may vary by country, taxes, exchange rates, and store settings.</li>
+          <li>Restore Purchases is available in the app for supported one-time unlocks.</li>
+          <li>Free lessons remain useful. Paid access unlocks depth and convenience, not basic app usability.</li>
+        </ul>
+        <a class="button" href="/ouxa/support/">Support</a>
+        <a class="button" href="/ouxa/privacy/">Privacy Policy</a>
+      </section>
+    </main>
+  </body>
+</html>
