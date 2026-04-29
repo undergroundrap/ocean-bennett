@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ocean-bennett-v6';
+const CACHE_NAME = 'ocean-bennett-v7';
 const ASSETS = [
   '/',
   '/index.html',
@@ -22,6 +22,7 @@ const ASSETS = [
   '/ouxa/privacy/',
   '/ouxa/pricing/',
   '/ouxa/support/',
+  '/ouxa/terms/',
   '/blog/posts.json',
   '/blog/template.html'
 ];

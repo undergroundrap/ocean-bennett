@@ -23,6 +23,9 @@
 /ouxa/support/
   Cache-Control: public, max-age=0, must-revalidate
 
+/ouxa/terms/
+  Cache-Control: public, max-age=0, must-revalidate
+
 /favicon.ico
   Cache-Control: public, max-age=604800
 
