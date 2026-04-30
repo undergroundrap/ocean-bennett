@@ -4,3 +4,7 @@
 # Static portfolio: no build command needed.
 # On Netlify, set the site name to oceanbennett so the launch URL becomes:
 # https://oceanbennett.com/
+#
+# Canonical host redirects live in _redirects:
+# http://oceanbennett.com/*, http://www.oceanbennett.com/*, and
+# https://www.oceanbennett.com/* all 301 to https://oceanbennett.com/:splat.
