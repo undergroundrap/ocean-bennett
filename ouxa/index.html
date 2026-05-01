@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ouxa — Computer science mastery, on your phone</title>
+<meta name="description" content="A focused learning app for the entire computer science stack — systems, algorithms, distributed, and AI engineering. The tutor lives on your phone, your work stays private, Foundations is free.">
+
+<meta property="og:title" content="Ouxa — Computer science mastery, on your phone">
+<meta property="og:description" content="A focused learning app for the entire CS stack. Tutor on your phone, Foundations free.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-elev: #111111;
+    --text: #f5f5f4;
+    --dim: #8a8a87;
+    --dim-2: #5a5a57;
+    --border: #1f1f1d;
+    --border-2: #2a2a27;
+    --accent: #e8e6df;
+    --green: oklch(0.72 0.14 145);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(10,10,10,0.7);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.015em;
+  }
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--text);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-links a {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .15s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 8px 14px;
+    border: 1px solid var(--border-2);
+    border-radius: 100px;
+    color: var(--text) !important;
+    font-size: 14px !important;
+    background: var(--bg-elev);
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .nav-cta:hover { background: #1a1a18; border-color: #353532; transform: translateY(-1px); }
+
+  /* ---------- Hero ---------- */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 32px 80px;
+  }
+  .hero {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--dim);
+    padding: 6px 14px;
+    border: 1px solid var(--border-2);
+    border-radius: 100px;
+    background: var(--bg-elev);
+    margin-bottom: 28px;
+  }
+  .eyebrow .pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 oklch(0.72 0.14 145 / 0.5); }
+    70% { box-shadow: 0 0 0 8px oklch(0.72 0.14 145 / 0); }
+    100% { box-shadow: 0 0 0 0 oklch(0.72 0.14 145 / 0); }
+  }
+
+  h1 {
+    font-size: clamp(46px, 5.6vw, 76px);
+    font-weight: 600;
+    letter-spacing: -0.038em;
+    line-height: 1.02;
+    margin: 0 0 24px;
+  }
+  h1 .accent {
+    color: var(--dim);
+    font-weight: 500;
+  }
+
+  .lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--dim);
+    max-width: 480px;
+    margin: 0 0 36px;
+    text-wrap: pretty;
+  }
+
+  /* ---------- CTAs ---------- */
+  .ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--text);
+    color: #0a0a0a;
+  }
+  .btn-primary:hover { transform: translateY(-1px); background: #fff; box-shadow: 0 10px 30px -10px rgba(255,255,255,0.25); }
+  .btn-secondary {
+    background: var(--bg-elev);
+    color: var(--text);
+    border-color: var(--border-2);
+  }
+  .btn-secondary:hover { transform: translateY(-1px); background: #1a1a18; border-color: #3a3a36; }
+  .btn-icon { width: 22px; height: 22px; flex-shrink: 0; }
+  .btn-stack { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+  .btn-stack .small { font-size: 10px; opacity: 0.7; font-weight: 400; }
+  .btn-stack .big { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+
+  /* ---------- Trust row ---------- */
+  .trust {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--dim);
+  }
+  .trust span { display: inline-flex; align-items: center; gap: 9px; }
+  .trust .dot {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--dim);
+  }
+
+  /* ---------- Phone visual ---------- */
+  .visual {
+    position: relative;
+    height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 50% at 50% 50%, oklch(0.4 0.04 90 / 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center center;
+    mask-image: radial-gradient(closest-side, #000 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(closest-side, #000 40%, transparent 75%);
+    opacity: 0.5;
+  }
+
+  .phone {
+    position: relative;
+    width: 320px;
+    height: 680px;
+    background: #050505;
+    border: 1px solid #2a2a27;
+    border-radius: 44px;
+    padding: 10px;
+    box-shadow:
+      0 50px 100px -20px rgba(0,0,0,0.8),
+      0 30px 60px -30px rgba(0,0,0,0.9),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0d0d0c;
+    border-radius: 36px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .notch {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 28px;
+    background: #050505;
+    border-radius: 100px;
+    z-index: 2;
+  }
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 24px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .status-bar .right { display: flex; gap: 6px; align-items: center; opacity: 0.85; }
+
+  .screen-body {
+    flex: 1;
+    padding: 38px 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    overflow: hidden;
+  }
+
+  /* App header: brand + stat chips */
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 4px 0;
+  }
+  .app-brand-row { display: flex; flex-direction: column; gap: 2px; }
+  .app-brand { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .app-level { font-size: 9px; font-weight: 700; color: var(--dim); letter-spacing: 0.12em; }
+  .stat-chips { display: flex; gap: 5px; }
+  .stat-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #161614;
+    border: 1px solid var(--border-2);
+    border-radius: 100px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .stat-chip svg { width: 11px; height: 11px; }
+
+  /* Path card */
+  .path-card {
+    border: 1px solid var(--border-2);
+    border-radius: 18px;
+    padding: 12px;
+    background: linear-gradient(160deg, #181816 0%, #0e0e0d 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .path-card-top {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+  }
+  .ready-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #050505;
+    border: 1px solid var(--border-2);
+    border-radius: 100px;
+    padding: 3px 8px;
+    color: var(--text);
+  }
+  .ready-pill .pulse {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--green);
+  }
+  .path-card-eyebrow {
+    font-size: 9px; font-weight: 700; color: var(--dim); letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .path-card-heading {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+    margin-top: 2px;
+  }
+  .crab { font-size: 22px; }
+  .path-card-sub { font-size: 11px; color: var(--dim); margin: 0; }
+  .path-progress-row {
+    display: flex; justify-content: space-between;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: var(--dim);
+  }
+  .progress-bar {
+    height: 3px;
+    background: #1a1a18;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    width: 12%;
+    height: 100%;
+    background: var(--text);
+    border-radius: 100px;
+  }
+  .path-cta {
+    margin-top: 2px;
+    background: var(--text);
+    color: #0a0a0a;
+    border-radius: 100px;
+    padding: 9px 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+
+  /* Stat tiles */
+  .stat-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat-tile {
+    border: 1px solid var(--border-2);
+    border-radius: 14px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #0f0f0e;
+  }
+  .stat-tile .icon { color: var(--dim); flex-shrink: 0; }
+  .stat-tile .num { font-size: 18px; font-weight: 700; line-height: 1; }
+  .stat-tile .lbl { font-size: 8px; font-weight: 700; color: var(--dim); letter-spacing: 0.12em; margin-top: 3px; }
+
+  /* Suggestion */
+  .suggestion-heading {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600;
+    margin-top: 2px;
+  }
+  .suggestion-card {
+    border: 1px solid var(--border-2);
+    border-radius: 14px;
+    padding: 10px 11px;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    background: #0f0f0e;
+  }
+  .suggestion-icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: #1a1a18;
+    border: 1px solid var(--border-2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .suggestion-content { display: flex; flex-direction: column; gap: 2px; }
+  .suggestion-title { font-size: 12px; font-weight: 700; letter-spacing: -0.01em; }
+  .suggestion-body { font-size: 10px; color: var(--dim); line-height: 1.4; }
+
+  /* Tab bar */
+  .tab-bar {
+    margin-top: auto;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-top: 1px solid var(--border);
+    background: #0a0a09;
+    padding: 8px 8px 12px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .tab-item {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    color: var(--dim);
+    font-size: 8px; font-weight: 700; letter-spacing: 0.08em;
+  }
+  .tab-item.active { color: var(--text); }
+  .tab-item svg { width: 18px; height: 18px; }
+
+  /* Floating chips */
+  .float-chip {
+    position: absolute;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-2);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+  }
+  .float-chip .icon-square {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    background: #0a0a0a;
+    border: 1px solid var(--border-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .float-chip .label-stack { display: flex; flex-direction: column; line-height: 1.2; }
+  .float-chip .label-stack .k { font-size: 10px; color: var(--dim); font-weight: 500; }
+  .float-chip .label-stack .v { font-size: 12px; font-weight: 500; }
+
+  .chip-1 { top: 90px; left: 8px; }
+  .chip-2 { bottom: 120px; right: 8px; }
+  .chip-3 { top: 240px; right: 0px; }
+
+  @media (max-width: 1200px) {
+    .float-chip { display: none; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 22px 32px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--dim);
+  }
+  .footer-inner a { color: var(--dim); text-decoration: none; }
+  .footer-inner a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 22px; }
+
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; }
+    .visual { height: 560px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    main { padding: 40px 20px 60px; }
+    .nav-inner { padding: 16px 20px; }
+    .float-chip { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span>Ouxa</span>
+    </div>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="https://oceanbennett.com/ouxa/pricing/">Pricing</a>
+      <a href="https://oceanbennett.com/ouxa/support/" class="nav-cta">Support</a>
+    </div>
+  </div>
+</nav>
+
+<main style="opacity: 1">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="pulse"></span>
+        <span>Early access · iOS &amp; Android</span>
+      </div>
+
+      <h1>
+        Computer science,<br>
+        in your pocket.
+      </h1>
+
+      <p class="lede">
+        A focused learning app for the whole stack — algorithms, systems,
+        databases, networks, distributed, and AI engineering. The tutor
+        lives on your phone, so your work stays private and the Foundations
+        track is free forever.
+      </p>
+
+      <div class="ctas">
+        <a href="#" class="btn btn-primary" aria-label="Download on the App Store">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <span class="btn-stack">
+            <span class="small">Download on the</span>
+            <span class="big">App Store</span>
+          </span>
+        </a>
+        <a href="#" class="btn btn-secondary" aria-label="Get it on Google Play">
+          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.6 1.85a1.5 1.5 0 0 0-.6 1.2v17.9a1.5 1.5 0 0 0 .6 1.2L13.5 12 3.6 1.85z" fill="#e8e6df"/>
+            <path d="M16.8 8.7L13.5 12l3.3 3.3 4.1-2.4c1.1-.6 1.1-2.2 0-2.8l-4.1-2.4z" fill="#a1a19c"/>
+            <path d="M3.6 22.15c.4.4 1 .5 1.5.2l12-7-3.6-3.4-9.9 10.2z" fill="#5a5a57"/>
+            <path d="M3.6 1.85L13.5 12l3.3-3.3-12-7c-.5-.3-1.1-.2-1.5.15z" fill="#8a8a87"/>
+          </svg>
+          <span class="btn-stack">
+            <span class="small">Get it on</span>
+            <span class="big">Google Play</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="trust">
+        <span><span class="dot"></span>Tutor on your phone</span>
+        <span><span class="dot"></span>Foundations always free</span>
+        <span><span class="dot"></span>Works offline</span>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="grid-bg"></div>
+
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar">
+            <span>9:41</span>
+            <span class="right">
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M0 8h2v2H0zm4-2h2v4H4zm4-2h2v6H8zm4-2h2v8h-2z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M2 9h2v6H2zm3-3h2v12H5zm3 6h2v6H8zm3-9h2v15h-2zm3 4h2v11h-2zm3-2h2v13h-2zm3 5h2v8h-2z" opacity="0.85"/></svg>
+              <span style="font-size:10px;border:1px solid currentColor;border-radius:3px;padding:0 3px;opacity:0.85;">87</span>
+            </span>
+          </div>
+
+          <div class="screen-body">
+            <div class="app-header">
+              <div class="app-brand-row">
+                <div class="app-brand">Ouxa</div>
+                <div class="app-level">LEVEL 1</div>
+              </div>
+              <div class="stat-chips">
+                <span class="stat-chip">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07L11 5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07L13 19"/></svg>
+                  0
+                </span>
+                <span class="stat-chip">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 0c.5 4-3 5-3 9 0 2 1.5 3.5 3.5 3.5s3-1.5 3-3.5c2 1 3 3 3 5.5 0 5-4 9-9 9s-9-4-9-9c0-6 5-8 5-14 3 0 5.5 0 5.5 0z"/></svg>
+                  1
+                </span>
+                <span class="stat-chip">
+                  <svg viewBox="0 0 24 24" fill="#ff5577"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4 2.5C10.5 6 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z" transform="translate(2)"/></svg>
+                  10
+                </span>
+              </div>
+            </div>
+
+            <div class="path-card">
+              <div class="path-card-top">
+                <span class="ready-pill"><span class="pulse"></span>READY</span>
+                <span style="color: var(--dim);">FOUNDATIONS</span>
+              </div>
+              <div class="path-card-eyebrow">CURRENT TRACK</div>
+              <div class="path-card-heading">
+                <span class="crab">◆</span> Algorithms
+              </div>
+              <p class="path-card-sub">From Big-O to graph traversals</p>
+              <div class="path-progress-row">
+                <span>0% COMPLETE</span>
+                <span>0 / 12 LESSONS</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <div class="path-cta">Start Next Lesson <span>›</span></div>
+            </div>
+
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM5 4H3v3a3 3 0 0 0 4 3M19 4h2v3a3 3 0 0 1-4 3"/></svg>
+                <div>
+                  <div class="num">0</div>
+                  <div class="lbl">LIFETIME XP</div>
+                </div>
+              </div>
+              <div class="stat-tile">
+                <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2 5 5 .5-4 3.5 1 5-4-2.5-4 2.5 1-5-4-3.5 5-.5z"/></svg>
+                <div>
+                  <div class="num">1</div>
+                  <div class="lbl">LESSONS</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="suggestion-heading">
+              <span>💡</span> Intelligence Suggestions
+            </div>
+            <div class="suggestion-card">
+              <div class="suggestion-icon">🚀</div>
+              <div class="suggestion-content">
+                <div class="suggestion-title">Level Up</div>
+                <div class="suggestion-body">You're on a roll. Start the next concept in your track.</div>
+              </div>
+            </div>
+
+            <div class="tab-bar">
+              <div class="tab-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>
+                <span>HOME</span>
+              </div>
+              <div class="tab-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+                <span>LEARN</span>
+              </div>
+              <div class="tab-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+                <span>PRACTICE</span>
+              </div>
+              <div class="tab-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+                <span>MODELS</span>
+              </div>
+              <div class="tab-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg>
+                <span>PROFILE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-chip chip-1">
+        <div class="icon-square">⌘</div>
+        <div class="label-stack">
+          <span class="k">Tutor</span>
+          <span class="v">On your phone</span>
+        </div>
+      </div>
+
+      <div class="float-chip chip-2">
+        <div class="icon-square" style="color: var(--green);">●</div>
+        <div class="label-stack">
+          <span class="k">Privacy</span>
+          <span class="v">Nothing leaves</span>
+        </div>
+      </div>
+
+      <div class="float-chip chip-3">
+        <div class="icon-square">★</div>
+        <div class="label-stack">
+          <span class="k">Foundations</span>
+          <span class="v">Always free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Ouxa · Built by Ocean Bennett</span>
+    <div class="footer-links">
+      <a href="https://oceanbennett.com/ouxa/support/">Support</a>
+      <a href="https://oceanbennett.com/ouxa/privacy/">Privacy</a>
+      <a href="https://oceanbennett.com/ouxa/terms/">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
