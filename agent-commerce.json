@@ -1,0 +1,465 @@
+{
+    "version":  "1.0.0",
+    "last_updated":  "2026-05-03",
+    "directory_url":  "https://oceanbennett.com/agent-commerce/",
+    "machine_readable_url":  "https://oceanbennett.com/agent-commerce.json",
+    "status":  "source_backed_editorial_index",
+    "disclaimer":  "This directory is informational. It does not grant agents permission to spend money. Verify merchant terms, require human approval for spend, and set wallet or payment limits before enabling autonomous commerce.",
+    "methodology":  {
+                        "status_labels":  {
+                                              "source_backed_signal":  "A public source says the merchant, platform, or protocol is participating in agentic commerce or an agent-commerce ecosystem.",
+                                              "protocol_entry":  "A protocol or infrastructure entry, not a merchant checkout guarantee.",
+                                              "needs_live_endpoint_review":  "Do not assume a production agent can complete purchases until a live endpoint, terms, and spend controls are verified."
+                                          },
+                        "risk_ratings":  {
+                                             "low":  "Mostly low-ticket or developer-controlled actions when keys and budgets are constrained.",
+                                             "medium":  "Purchases can involve returns, shipping, inventory, fraud checks, or higher ticket size.",
+                                             "high":  "Cloud or infrastructure spend can scale quickly; require strict approval and hard limits."
+                                         },
+                        "protocol_notes":  [
+                                               "ACP is Stripe\u0027s Agentic Commerce Protocol for checkout flows and payment token handoff.",
+                                               "UCP is the Universal Commerce Protocol for discovery, checkout, identity linking, and order management across commerce ecosystems.",
+                                               "MCP connects AI applications to external tools and data; it is not, by itself, payment authorization."
+                                           ]
+                    },
+    "sources":  [
+                    "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                    "https://docs.stripe.com/agentic-commerce/acp",
+                    "https://ucp.dev/",
+                    "https://modelcontextprotocol.io/docs/getting-started/intro"
+                ],
+    "stores":  [
+                   {
+                       "name":  "Etsy",
+                       "url":  "https://www.etsy.com/",
+                       "category":  "marketplace",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal",
+                                         "UCP ecosystem signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Good discovery target for unique goods. Confirm seller terms, shipping, returns, and inventory before purchase."
+                   },
+                   {
+                       "name":  "URBN",
+                       "url":  "https://www.urbn.com/",
+                       "category":  "fashion",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Includes Anthropologie, Free People, and Urban Outfitters per Stripe announcement."
+                   },
+                   {
+                       "name":  "Revolve",
+                       "url":  "https://www.revolve.com/",
+                       "category":  "fashion",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Fashion purchases need size, return-window, and shipping confirmation before checkout."
+                   },
+                   {
+                       "name":  "Abt Electronics",
+                       "url":  "https://www.abt.com/",
+                       "category":  "electronics",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "High-value electronics require model-number, warranty, and delivery checks."
+                   },
+                   {
+                       "name":  "Ashley Furniture",
+                       "url":  "https://www.ashleyfurniture.com/",
+                       "category":  "home",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Furniture orders need delivery-window, room-fit, haul-away, and return policy review."
+                   },
+                   {
+                       "name":  "Coach",
+                       "url":  "https://www.coach.com/",
+                       "category":  "fashion",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Luxury/accessory orders should confirm authenticity channel, tax, and returns."
+                   },
+                   {
+                       "name":  "Kate Spade",
+                       "url":  "https://www.katespade.com/",
+                       "category":  "fashion",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Require user confirmation for color, variant, gift options, and shipping."
+                   },
+                   {
+                       "name":  "Halara",
+                       "url":  "https://thehalara.com/",
+                       "category":  "fashion",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Sizing and return terms should be treated as required confirmation fields."
+                   },
+                   {
+                       "name":  "Nectar",
+                       "url":  "https://www.nectarsleep.com/",
+                       "category":  "home",
+                       "capabilities":  [
+                                            "discover",
+                                            "quote",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "Stripe ACP signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "agentic_payment_tokens_where_configured"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://stripe.com/nl/newsroom/news/agentic-commerce-suite",
+                       "agent_notes":  "Large-item purchases need delivery, trial, return, and financing checks."
+                   },
+                   {
+                       "name":  "Shopify",
+                       "url":  "https://www.shopify.com/",
+                       "category":  "commerce_platform",
+                       "capabilities":  [
+                                            "ecosystem",
+                                            "merchant_discovery",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "UCP ecosystem signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "merchant_dependent",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_dependent"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://ucp.dev/",
+                       "agent_notes":  "Platform signal. Individual merchant readiness still needs verification."
+                   },
+                   {
+                       "name":  "Wayfair",
+                       "url":  "https://www.wayfair.com/",
+                       "category":  "home",
+                       "capabilities":  [
+                                            "ecosystem",
+                                            "discover",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "UCP ecosystem signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "protocol_dependent"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://ucp.dev/",
+                       "agent_notes":  "Home purchases often need dimension, delivery, assembly, and return-policy review."
+                   },
+                   {
+                       "name":  "Target",
+                       "url":  "https://www.target.com/",
+                       "category":  "retail",
+                       "capabilities":  [
+                                            "ecosystem",
+                                            "discover",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "UCP ecosystem signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "protocol_dependent"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://ucp.dev/",
+                       "agent_notes":  "Good candidate for repeat retail tasks, but substitutions and pickup/delivery rules require confirmation."
+                   },
+                   {
+                       "name":  "Walmart",
+                       "url":  "https://www.walmart.com/",
+                       "category":  "retail",
+                       "capabilities":  [
+                                            "ecosystem",
+                                            "discover",
+                                            "checkout_signal"
+                                        ],
+                       "protocols":  [
+                                         "UCP ecosystem signal"
+                                     ],
+                       "agent_readiness":  "source_backed_signal",
+                       "auth_methods":  [
+                                            "account",
+                                            "browser_checkout",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "merchant_checkout",
+                                               "protocol_dependent"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://ucp.dev/",
+                       "agent_notes":  "Use spend caps and require confirmation for substitutions, delivery windows, and marketplace sellers."
+                   },
+                   {
+                       "name":  "Stripe Agentic Commerce Protocol",
+                       "url":  "https://docs.stripe.com/agentic-commerce/acp",
+                       "category":  "payment_protocol",
+                       "capabilities":  [
+                                            "checkout_session",
+                                            "payment_token_handoff",
+                                            "seller_agent_flow"
+                                        ],
+                       "protocols":  [
+                                         "ACP"
+                                     ],
+                       "agent_readiness":  "protocol_entry",
+                       "auth_methods":  [
+                                            "seller_integration",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "shared_payment_tokens",
+                                               "Stripe"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://docs.stripe.com/agentic-commerce/acp",
+                       "agent_notes":  "Protocol entry. Use merchant-specific terms and user consent before any payment action."
+                   },
+                   {
+                       "name":  "Universal Commerce Protocol",
+                       "url":  "https://ucp.dev/",
+                       "category":  "commerce_protocol",
+                       "capabilities":  [
+                                            "discovery",
+                                            "checkout",
+                                            "identity_linking",
+                                            "order_management"
+                                        ],
+                       "protocols":  [
+                                         "UCP",
+                                         "AP2",
+                                         "A2A",
+                                         "MCP support"
+                                     ],
+                       "agent_readiness":  "protocol_entry",
+                       "auth_methods":  [
+                                            "OAuth 2.0",
+                                            "protocol_dependent"
+                                        ],
+                       "payment_support":  [
+                                               "AP2",
+                                               "wallet_ecosystem",
+                                               "provider_dependent"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://ucp.dev/",
+                       "agent_notes":  "Protocol entry. Public ecosystem endorsement is not the same as live merchant purchase permission."
+                   },
+                   {
+                       "name":  "Model Context Protocol",
+                       "url":  "https://modelcontextprotocol.io/docs/getting-started/intro",
+                       "category":  "agent_tool_protocol",
+                       "capabilities":  [
+                                            "tool_access",
+                                            "resource_access",
+                                            "workflow_integration"
+                                        ],
+                       "protocols":  [
+                                         "MCP"
+                                     ],
+                       "agent_readiness":  "protocol_entry",
+                       "auth_methods":  [
+                                            "server_dependent",
+                                            "OAuth_where_supported"
+                                        ],
+                       "payment_support":  [
+                                               "not_payment_authorization"
+                                           ],
+                       "human_in_loop_recommended":  true,
+                       "risk_rating":  "medium",
+                       "source_url":  "https://modelcontextprotocol.io/docs/getting-started/intro",
+                       "agent_notes":  "MCP can connect agents to tools and APIs. It should not be treated as permission to spend money."
+                   }
+               ]
+}

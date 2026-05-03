@@ -29,6 +29,12 @@
 /ouxa/terms/
   Cache-Control: public, max-age=0, must-revalidate
 
+/agent-commerce/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/agent-commerce.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
 /favicon.ico
   Cache-Control: public, max-age=604800
 

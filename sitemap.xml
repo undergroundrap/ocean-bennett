@@ -32,4 +32,11 @@
     <loc>https://oceanbennett.com/ouxa/terms/</loc>
     <priority>0.5</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://oceanbennett.com/agent-commerce/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://oceanbennett.com/agent-commerce.json</loc>
+    <priority>0.4</priority>
+  </url></urlset>
