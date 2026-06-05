@@ -356,6 +356,10 @@ footer a:hover { color: var(--fg); }
   isolation: isolate;
   transition: border-color 220ms ease, background 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
+.now-link {
+  color: var(--fg);
+  text-decoration: none;
+}
 .now::before {
   content: "";
   position: absolute;

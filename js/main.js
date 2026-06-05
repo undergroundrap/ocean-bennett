@@ -21,11 +21,25 @@
       slug: "github.com/undergroundrap/hematite-cli",
     },
     {
+      name: "Ouxa",
+      tag: "MOBILE · AI LEARNING",
+      desc: "Local-first programming learning app for Rust, Python, TypeScript, Node.js, and AI product engineering. Built with Expo + React Native, offline tutor fallbacks, and one-time App Store purchases.",
+      url: "/ouxa/",
+      slug: "oceanbennett.com/ouxa",
+    },
+    {
       name: "UEFN-TOOLBELT",
       tag: "TOOLKIT · PYTHON",
       desc: "The ever-expanding Swiss Army Knife for the UEFN Python API — 358+ tools across 55+ categories. Automate world-building, manage assets, generate Verse boilerplate, and control the editor with AI from a fully-offline PySide6 dashboard.",
       url: "https://github.com/undergroundrap/UEFN-TOOLBELT",
       slug: "github.com/undergroundrap/UEFN-TOOLBELT",
+    },
+    {
+      name: "Agent Commerce Index",
+      tag: "SEO · AGENTS",
+      desc: "Source-backed directory for agentic commerce protocols, merchant readiness signals, safety ratings, and a machine-readable JSON endpoint for AI agents.",
+      url: "/agent-commerce/",
+      slug: "oceanbennett.com/agent-commerce",
     },
     {
       name: "SINGLE-PLAYER-AI-MUD",
