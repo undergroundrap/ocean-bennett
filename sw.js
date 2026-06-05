@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ocean-bennett-v13';
+const CACHE_NAME = 'ocean-bennett-v14';
 const ASSETS = [
   '/',
   '/index.html',
